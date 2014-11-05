@@ -79,7 +79,6 @@ def print_banner():
 * Coded by Christian Martorella                                   *
 * Edge-Security Research                                          *
 * cmartorella@edge-security.com                                   *
-* Some updates by Marcus Watson (@branmacmuffin)                  *
 *******************************************************************\n\n"""
 
 def start(argv):
