@@ -9,9 +9,9 @@ class search_google_profiles:
 		self.word=word
 		self.files="pdf"
 		self.total_results=u""
-		self.server="www.google.com"
+		self.server=options.google_domain
 		self.server_api="www.googleapis.com"
-		self.hostname="www.google.com"
+		self.hostname=options.google_domain
 		self.userAgent="(Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6"
 		self.quantity=100
 		self.limit=options.limit
@@ -20,7 +20,7 @@ class search_google_profiles:
 
 	def do_search_profiles(self):
 		h = httplib.HTTP(self.server)
-		h.putrequest('GET', '/search?num='+ str(self.quantity) + '&start=' + str(self.counter) + '&hl=en&meta=&q=site:www.google.com%20intitle:"Google%20Profile"%20"Companies%20I%27ve%20worked%20for"%20"at%20' + self.word + '"')
+		h.putrequest('GET', '/search?num='+ str(self.quantity) + '&start=' + str(self.counter) + '&hl=en&meta=&q=site:' + self.hostname + '%20intitle:"Google%20Profile"%20"Companies%20I%27ve%20worked%20for"%20"at%20' + self.word + '"')
 		h.putheader('Host', self.hostname)
 		h.putheader('User-agent', self.userAgent)
 		h.endheaders()
