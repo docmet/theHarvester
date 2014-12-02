@@ -8,8 +8,8 @@ class search_google:
 	def __init__(self,word,options):
 		self.word=word
 		self.total_results=u""
-		self.server="www.google.com"
-		self.hostname="www.google.com"
+		self.server=options.google_domain
+		self.hostname=options.google_domain
 		self.userAgent="(Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6"
 		self.quantity=100 # the number to retrieve at once
 		self.limit=options.limit
@@ -27,7 +27,7 @@ class search_google:
 		self.total_results+=unicode(h.getfile().read(), encoding)
 
 	def process(self):
-		print "[-] Searching Google:"
+		print "[-] Searching Google: ("+self.hostname+")"
 
 		while self.counter < self.limit and self.counter <= 1000:
 			self.do_search()

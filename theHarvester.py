@@ -94,6 +94,7 @@ def start(argv):
 
 	parser.add_argument("-d", "--domain", dest="word", help="Domain or company name to search for")
 	parser.add_argument("-b", "--engine", dest="engine", help="Data source ("+engine_string+"all) (default google)",default="google")
+	parser.add_argument("-g", "--google-domain", dest="google_domain", help="Google server domain (default www.google.com)",default="www.google.com")
 	parser.add_argument("-s", "--start", dest="start", type=int, help="Start in result number X (default 0)", default=0)
 	parser.add_argument("-v", "--virtual", dest="virtual", action="store_true", help="Verify host name via dns resolution and search for\nvirtual hosts")
 	parser.add_argument("-n", "--dns-lookup", dest="dns_lookup", action="store_true", help="Perform a DNS reverse query on all ranges discovered")
